@@ -23,10 +23,34 @@ class Storage {
 }
 
 const drink = new Storage();
-drink.addValue("wf", "qwerty");
-drink.addValue("qwe", "qwe");
-console.log(drink);
-console.log(drink.getValue("wfe"));
-console.log(drink.getKeys());
-drink.reset();
-console.log(drink);
+
+const addValueBtn = document.querySelector("#addValueBtn");
+addValueBtn.addEventListener("click", () => {
+    const keyToAdd = document.querySelector("#keyToAdd").value;
+    const valueToAdd = document.querySelector("#valueToAdd").value;
+    drink.addValue(keyToAdd, valueToAdd);
+    console.log(drink);
+});
+
+const resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", () => {
+    drink.reset();
+    console.log(drink);
+});
+
+const getValueBtn = document.querySelector("#getValueBtn");
+getValueBtn.addEventListener("click", () => {
+    const keyToGetValue = document.querySelector("#keyToGetValue").value;
+    console.log(drink.getValue(keyToGetValue));
+});
+
+const deleteBtn = document.querySelector("#deleteBtn");
+deleteBtn.addEventListener("click", () => {
+    const keyToDelete = document.querySelector("#keyToDelete").value;
+    console.log(drink.deleteValue(keyToDelete));
+});
+
+const getKeysBtn = document.querySelector("#getKeysBtn");
+getKeysBtn.addEventListener("click", () => {
+    console.log(drink.getKeys());
+});
