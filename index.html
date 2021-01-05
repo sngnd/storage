@@ -8,7 +8,68 @@
 </head>
 
 <body>
+    <div class="container">
+        <header>Storage class</header>
+        <div>
+            <input id="keyToAdd" type="text" placeholder="Key" />
+            <input id="valueToAdd" type="text" placeholder="Value" />
+            <button id="addValueBtn" class="button button_add">
+          Сохранить значение
+        </button>
+        </div>
+        <div>
+            <input id="keyToGetValue" type="text" placeholder="Key" />
+            <button id="getValueBtn" class="button">
+          Получить значение по ключу
+        </button>
+        </div>
+        <input id="keyToDelete" type="text" placeholder="Key" />
+        <button id="deleteBtn" class="button">Удаление по ключу</button>
+        <button id="getKeysBtn" class="button button__delete">
+        Получить массив
+      </button>
+        <button id="resetBtn" class="button button__reset">Очистить все</button>
+    </div>
     <script src="./storage.js"></script>
 </body>
+
+<style>
+    body {
+        box-sizing: border-box;
+        margin: 0;
+        font-size: 1rem;
+    }
+    
+    header {
+        font-size: 1.5rem;
+    }
+    
+    .container {
+        margin: 1rem;
+    }
+    
+    input,
+    select {
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+    }
+    
+    .button {
+        border: none;
+        padding: 0.55rem 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        background-color: grey;
+        color: white;
+    }
+    
+    .button__reset,
+    .button__delete {
+        display: block;
+    }
+</style>
 
 </html>
